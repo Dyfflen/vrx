@@ -43,6 +43,12 @@ USVS = [
     'wam-v',
 ]
 
+# Hybrid aerial-aquatic vehicles. These are native SDF models: the template
+# lives in vrx_gz/models/<model_type>/model.sdf.in (no xacro / URDF step).
+HAUVS = [
+    'hydrone_j',
+]
+
 WAVEFIELD_SIZE = {'sydney_regatta': 1000,}
 
 
@@ -62,6 +68,9 @@ class Model:
 
     def is_USV(self):
         return self.model_type in USVS
+
+    def is_HAUV(self):
+        return self.model_type in HAUVS
 
     def bridges(self, world_name):
         custom_launches = []
@@ -91,6 +100,13 @@ class Model:
             ])
         elif self.is_USV():
             pass
+        elif self.is_HAUV():
+            bridges.extend([
+                # aerial rotors: actuator_msgs/Actuators, rad/s
+                vrx_gz.bridges.motor_speed(self.model_name),
+            ])
+            # underwater thrusters (w1, w2, w3) are bridged by payload_bridges
+            # because the Thruster plugins carry a <name> element.
 
         return [bridges, nodes, custom_launches]
 
@@ -257,7 +273,19 @@ class Model:
         command.append(model_output_file)
         return command
 
+    def generate_from_template(self):
+        # Native SDF: substitute the instance name into the template and
+        # parse it for sensors / thrusters, like generate() does for URDF.
+        template = os.path.join(get_package_share_directory('vrx_gz'),
+                                'models', self.model_type, 'model.sdf.in')
+        with open(template, 'r') as f:
+            model_sdf = f.read().replace('@NAME@', self.model_name)
+        self.payload = self.payload_from_sdf(model_sdf)
+        return None, model_sdf
+
     def generate(self):
+        if self.is_HAUV():
+            return self.generate_from_template()
         command = None
         if not self.urdf:
             self.urdf = os.path.join(get_package_share_directory('wamv_gazebo'),

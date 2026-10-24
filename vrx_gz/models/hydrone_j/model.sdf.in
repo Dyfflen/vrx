@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<!-- GERADO por tools/gen_model_sdf.py a partir de agents.HydroneJ._params. -->
+<!-- Nao edite a mao: mude o gerador. -->
+<sdf version="1.9">
+  <model name="@NAME@">
+    <pose>0 0 0 0 0 0</pose>
+    <self_collide>false</self_collide>
+    <link name="base_link">
+      <inertial><mass>10.0297</mass><inertia><ixx>0.339114</ixx><iyy>0.40863</iyy><izz>0.365712</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="body"><pose>0 0 0 0 0 0</pose><geometry><cylinder><radius>0.105006</radius><length>0.3</length></cylinder></geometry><material><ambient>0.85 0.85 0.9 0.7</ambient><diffuse>0.85 0.85 0.9 0.7</diffuse></material></visual>
+      <visual name="arm_a1"><pose>0.106066 0.106066 0 0 0 0.785398</pose><geometry><box><size>0.3 0.02 0.02</size></box></geometry><material><ambient>0.1 0.1 0.1 1.0</ambient><diffuse>0.1 0.1 0.1 1.0</diffuse></material></visual>
+      <visual name="arm_a2"><pose>0.106066 -0.106066 0 0 0 -0.785398</pose><geometry><box><size>0.3 0.02 0.02</size></box></geometry><material><ambient>0.1 0.1 0.1 1.0</ambient><diffuse>0.1 0.1 0.1 1.0</diffuse></material></visual>
+      <visual name="arm_a3"><pose>-0.106066 -0.106066 0 0 0 -2.35619</pose><geometry><box><size>0.3 0.02 0.02</size></box></geometry><material><ambient>0.1 0.1 0.1 1.0</ambient><diffuse>0.1 0.1 0.1 1.0</diffuse></material></visual>
+      <visual name="arm_a4"><pose>-0.106066 0.106066 0 0 0 2.35619</pose><geometry><box><size>0.3 0.02 0.02</size></box></geometry><material><ambient>0.1 0.1 0.1 1.0</ambient><diffuse>0.1 0.1 0.1 1.0</diffuse></material></visual>
+      <collision name="hull_collision"><geometry><cylinder><radius>0.105006</radius><length>0.3</length></cylinder></geometry></collision>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on><update_rate>100</update_rate>
+        <visualize>false</visualize>
+      </sensor>
+    </link>
+    <link name="rotor_a1">
+      <pose>0.212132 0.212132 0.03 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>7.2e-05</ixx><iyy>7.2e-05</iyy><izz>0.000144</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="prop"><geometry><cylinder><radius>0.12</radius><length>0.004</length></cylinder></geometry><material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material></visual>
+    </link>
+    <joint name="rotor_a1_joint" type="revolute">
+      <parent>base_link</parent><child>rotor_a1</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit><dynamics><damping>0</damping></dynamics></axis>
+    </joint>
+    <link name="rotor_a2">
+      <pose>0.212132 -0.212132 0.03 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>7.2e-05</ixx><iyy>7.2e-05</iyy><izz>0.000144</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="prop"><geometry><cylinder><radius>0.12</radius><length>0.004</length></cylinder></geometry><material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material></visual>
+    </link>
+    <joint name="rotor_a2_joint" type="revolute">
+      <parent>base_link</parent><child>rotor_a2</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit><dynamics><damping>0</damping></dynamics></axis>
+    </joint>
+    <link name="rotor_a3">
+      <pose>-0.212132 -0.212132 0.03 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>7.2e-05</ixx><iyy>7.2e-05</iyy><izz>0.000144</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="prop"><geometry><cylinder><radius>0.12</radius><length>0.004</length></cylinder></geometry><material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material></visual>
+    </link>
+    <joint name="rotor_a3_joint" type="revolute">
+      <parent>base_link</parent><child>rotor_a3</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit><dynamics><damping>0</damping></dynamics></axis>
+    </joint>
+    <link name="rotor_a4">
+      <pose>-0.212132 0.212132 0.03 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>7.2e-05</ixx><iyy>7.2e-05</iyy><izz>0.000144</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="prop"><geometry><cylinder><radius>0.12</radius><length>0.004</length></cylinder></geometry><material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material></visual>
+    </link>
+    <joint name="rotor_a4_joint" type="revolute">
+      <parent>base_link</parent><child>rotor_a4</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit><dynamics><damping>0</damping></dynamics></axis>
+    </joint>
+    <link name="rotor_a5">
+      <pose>0.212132 0.212132 -0.03 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>7.2e-05</ixx><iyy>7.2e-05</iyy><izz>0.000144</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="prop"><geometry><cylinder><radius>0.12</radius><length>0.004</length></cylinder></geometry><material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material></visual>
+    </link>
+    <joint name="rotor_a5_joint" type="revolute">
+      <parent>base_link</parent><child>rotor_a5</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit><dynamics><damping>0</damping></dynamics></axis>
+    </joint>
+    <link name="rotor_a6">
+      <pose>0.212132 -0.212132 -0.03 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>7.2e-05</ixx><iyy>7.2e-05</iyy><izz>0.000144</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="prop"><geometry><cylinder><radius>0.12</radius><length>0.004</length></cylinder></geometry><material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material></visual>
+    </link>
+    <joint name="rotor_a6_joint" type="revolute">
+      <parent>base_link</parent><child>rotor_a6</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit><dynamics><damping>0</damping></dynamics></axis>
+    </joint>
+    <link name="rotor_a7">
+      <pose>-0.212132 -0.212132 -0.03 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>7.2e-05</ixx><iyy>7.2e-05</iyy><izz>0.000144</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="prop"><geometry><cylinder><radius>0.12</radius><length>0.004</length></cylinder></geometry><material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material></visual>
+    </link>
+    <joint name="rotor_a7_joint" type="revolute">
+      <parent>base_link</parent><child>rotor_a7</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit><dynamics><damping>0</damping></dynamics></axis>
+    </joint>
+    <link name="rotor_a8">
+      <pose>-0.212132 0.212132 -0.03 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>7.2e-05</ixx><iyy>7.2e-05</iyy><izz>0.000144</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="prop"><geometry><cylinder><radius>0.12</radius><length>0.004</length></cylinder></geometry><material><ambient>0.05 0.05 0.05 1.0</ambient><diffuse>0.05 0.05 0.05 1.0</diffuse></material></visual>
+    </link>
+    <joint name="rotor_a8_joint" type="revolute">
+      <parent>base_link</parent><child>rotor_a8</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit><dynamics><damping>0</damping></dynamics></axis>
+    </joint>
+    <link name="t200_w1">
+      <pose>0 0.12 0 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>2e-05</ixx><iyy>2e-05</iyy><izz>2e-05</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="body"><pose>0 0 0 0 1.5708 0</pose><geometry><cylinder><radius>0.05</radius><length>0.11</length></cylinder></geometry><material><ambient>0.1 0.2 0.6 1.0</ambient><diffuse>0.1 0.2 0.6 1.0</diffuse></material></visual>
+    </link>
+    <joint name="t200_w1_joint" type="revolute">
+      <parent>base_link</parent><child>t200_w1</child>
+      <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
+    </joint>
+    <link name="t200_w2">
+      <pose>0 -0.12 0 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>2e-05</ixx><iyy>2e-05</iyy><izz>2e-05</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="body"><pose>0 0 0 0 1.5708 0</pose><geometry><cylinder><radius>0.05</radius><length>0.11</length></cylinder></geometry><material><ambient>0.1 0.2 0.6 1.0</ambient><diffuse>0.1 0.2 0.6 1.0</diffuse></material></visual>
+    </link>
+    <joint name="t200_w2_joint" type="revolute">
+      <parent>base_link</parent><child>t200_w2</child>
+      <axis><xyz>1 0 0</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
+    </joint>
+    <link name="t200_w3">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial><mass>0.02</mass><inertia><ixx>2e-05</ixx><iyy>2e-05</iyy><izz>2e-05</izz><ixy>0</ixy><ixz>0</ixz><iyz>0</iyz></inertia></inertial>
+      <visual name="body"><pose>0 0 0 0 0 0</pose><geometry><cylinder><radius>0.05</radius><length>0.11</length></cylinder></geometry><material><ambient>0.1 0.2 0.6 1.0</ambient><diffuse>0.1 0.2 0.6 1.0</diffuse></material></visual>
+    </link>
+    <joint name="t200_w3_joint" type="revolute">
+      <parent>base_link</parent><child>t200_w3</child>
+      <axis><xyz>0 0 1</xyz><limit><lower>-1e16</lower><upper>1e16</upper></limit></axis>
+    </joint>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_a1_joint</jointName><linkName>rotor_a1</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>523.6</maxRotVelocity>
+      <motorConstant>7.2076e-05</motorConstant><momentConstant>0.0140005</momentConstant>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>0</actuator_number>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_a2_joint</jointName><linkName>rotor_a2</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>523.6</maxRotVelocity>
+      <motorConstant>7.2076e-05</motorConstant><momentConstant>0.0140005</momentConstant>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>1</actuator_number>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_a3_joint</jointName><linkName>rotor_a3</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>523.6</maxRotVelocity>
+      <motorConstant>7.2076e-05</motorConstant><momentConstant>0.0140005</momentConstant>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>2</actuator_number>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_a4_joint</jointName><linkName>rotor_a4</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>523.6</maxRotVelocity>
+      <motorConstant>7.2076e-05</motorConstant><momentConstant>0.0140005</momentConstant>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>3</actuator_number>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_a5_joint</jointName><linkName>rotor_a5</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>523.6</maxRotVelocity>
+      <motorConstant>6.12646e-05</motorConstant><momentConstant>0.0140005</momentConstant>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>4</actuator_number>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_a6_joint</jointName><linkName>rotor_a6</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>523.6</maxRotVelocity>
+      <motorConstant>6.12646e-05</motorConstant><momentConstant>0.0140005</momentConstant>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>5</actuator_number>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_a7_joint</jointName><linkName>rotor_a7</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>523.6</maxRotVelocity>
+      <motorConstant>6.12646e-05</motorConstant><momentConstant>0.0140005</momentConstant>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>6</actuator_number>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_a8_joint</jointName><linkName>rotor_a8</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp><timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>523.6</maxRotVelocity>
+      <motorConstant>6.12646e-05</motorConstant><momentConstant>0.0140005</momentConstant>
+      <rotorDragCoefficient>0</rotorDragCoefficient><rollingMomentCoefficient>0</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>7</actuator_number>
+    </plugin>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <namespace>@NAME@</namespace>
+      <joint_name>t200_w1_joint</joint_name>
+      <topic>thrusters/w1/thrust</topic>
+      <name>w1</name>
+      <fluid_density>997</fluid_density>
+      <propeller_diameter>0.076</propeller_diameter>
+      <thrust_coefficient>0.00977479</thrust_coefficient>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>51.4864</max_thrust_cmd>
+      <min_thrust_cmd>-40.2071</min_thrust_cmd>
+    </plugin>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <namespace>@NAME@</namespace>
+      <joint_name>t200_w2_joint</joint_name>
+      <topic>thrusters/w2/thrust</topic>
+      <name>w2</name>
+      <fluid_density>997</fluid_density>
+      <propeller_diameter>0.076</propeller_diameter>
+      <thrust_coefficient>0.00977479</thrust_coefficient>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>51.4864</max_thrust_cmd>
+      <min_thrust_cmd>-40.2071</min_thrust_cmd>
+    </plugin>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <namespace>@NAME@</namespace>
+      <joint_name>t200_w3_joint</joint_name>
+      <topic>thrusters/w3/thrust</topic>
+      <name>w3</name>
+      <fluid_density>997</fluid_density>
+      <propeller_diameter>0.076</propeller_diameter>
+      <thrust_coefficient>0.00977479</thrust_coefficient>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>51.4864</max_thrust_cmd>
+      <min_thrust_cmd>-40.2071</min_thrust_cmd>
+    </plugin>
+    <plugin filename="libPolyhedraBuoyancyDrag.so" name="vrx::PolyhedraBuoyancyDrag">
+      <fluid_density>997</fluid_density><fluid_level>0.0</fluid_level>
+      <linear_drag>1.0461</linear_drag><angular_drag>0.212861</angular_drag>
+      <buoyancy name="hull"><link_name>base_link</link_name><pose>0 0 0 0 0 0</pose>
+        <geometry><cylinder><radius>0.105006</radius><length>0.3</length></cylinder></geometry>
+      </buoyancy>
+      <wavefield><topic>/vrx/wavefield/parameters</topic></wavefield>
+    </plugin>
+    <plugin filename="gz-sim-pose-publisher-system" name="gz::sim::systems::PosePublisher">
+      <publish_link_pose>true</publish_link_pose><publish_sensor_pose>true</publish_sensor_pose>
+      <publish_collision_pose>false</publish_collision_pose><publish_visual_pose>false</publish_visual_pose>
+      <publish_nested_model_pose>false</publish_nested_model_pose><publish_model_pose>false</publish_model_pose>
+      <use_pose_vector_msg>true</use_pose_vector_msg><static_publisher>false</static_publisher>
+      <update_frequency>50</update_frequency>
+    </plugin>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher"/>
+  </model>
+</sdf>

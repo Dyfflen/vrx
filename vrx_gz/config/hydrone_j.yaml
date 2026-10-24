@@ -1,0 +1,9 @@
+# Spawna o Hydrone-J no sydney_regatta no mesmo ponto onde o VRX poe o WAM-V
+# (competition.launch.py usa -532 162). Uso:
+#   ros2 launch vrx_gz vrx_environment.launch.py world:=sydney_regatta \
+#        config_file:=<caminho>/config/hydrone_j.yaml
+- model_name: hydrone_j
+  model_type: hydrone_j
+  position:
+    xyz: [-532, 162, 0.0]
+    rpy: [0, 0, 0]

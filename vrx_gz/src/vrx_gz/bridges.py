@@ -69,6 +69,15 @@ def cmd_vel(model_name):
         ros_type='geometry_msgs/msg/Twist',
         direction=BridgeDirection.ROS_TO_GZ)
 
+def motor_speed(model_name):
+    # Aerial rotors of a hybrid vehicle (gz MulticopterMotorModel plugins).
+    return Bridge(
+        gz_topic=f'/{model_name}/command/motor_speed',
+        ros_topic='command/motor_speed',
+        gz_type='gz.msgs.Actuators',
+        ros_type='actuator_msgs/msg/Actuators',
+        direction=BridgeDirection.ROS_TO_GZ)
+
 def comms_tx(model_name):
     return Bridge(
         gz_topic='/broker/msgs',
